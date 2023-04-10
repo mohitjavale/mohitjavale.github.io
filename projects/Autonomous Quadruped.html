@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mohit's Websi1e</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="/index.html" class="title">Mohit's Websi1e</a>
+				<nav>
+					<ul>
+						<li><a href="/index.html">Home</a></li>
+						<li><a href="/projects_main.html">Projects</a></li>
+						<li><a href="/blog_main.html" class="active">Blog</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Autonomous Quadruped (Team Robocon)</h1>
+							
+							<p>Older prototypes -></p>
+                            <hr>
+                            <h4>Mini Quadru</h4>
+                            <p> This quadruped was actually designed by seniors of the club, but was one of the first one that I got my hands on. This bot has 8 DOF's and uses SG-90's for actuation and it pretty tiny, and can alsomt fit in the palm of your hand. 
+                                Using this model, I mainly tested out the functionality of the PCA9685 board and it's libraries.
+                                Many of the basic control framework, used even in the later versions are just refined and edited version of the algo's that started from this model. </p>
+                            <center>
+                            <img src="/images/projects/Autonomous Quadruped/v1.jpeg" alt="" height="300"/>
+                            <video height="300" controls><source src="/images/projects/Autonomous Quadruped/v1_pushup.mp4" type="video/mp4"></video>
+                            </center>
+							<hr>
+							<h4>Spot Mini Mini Version</h4>
+							<p> This model was directly taken up from the modeified spot mini mini project. However, our servos weak for the size, the CAD's weren't perfect and the belt drive had no appropriate tensioning idlers, which resulted in the belt slipping over the gear. </p>
+                            <center>
+							<img src="/images/projects/Autonomous Quadruped/v2_1.jpeg" alt="" height="300"/>
+							<img src="/images/projects/Autonomous Quadruped/v2_2.jpeg" alt="" height="300"/>
+							</center>
+							<hr>
+							<h4>4 Link Actuation ?</h4>
+							<p> This model was a few versions in, where we had decided we wanted to move acrossd from the belt driven concept, and I had started to just CAd from scratch, and hence this was my attempt to use a 4-bar parallel linkage mechanism for transmission. And although this did work without any laods on it, under load, the link and related structures started wwarping, leading to really ineffective transmission.
+								Notable learning from this design were the fact that the horn of the servos were 3D printed as well after a lot of testing and effort, but were not worth it , at least with PLA since they would after a few test runs get grinded down againts the metal and stop working.
+								Another fun fact is that we lacked short M3 screws, and this model from the get go was designed for longer screws. In the final model immages, it can be seen that for the transmission mechanism screw, there was a small slot created specifically to accomodate this long screw so that it wouldn't interfere with the upper link and hence gave a larger range of motion we could acheive. 
+							</p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/v3_1.jpeg" alt="" height="300"/>
+                            <img src="/images/projects/Autonomous Quadruped/v3_2.jpeg" alt=""  height="300"/>
+							<img src="/images/projects/Autonomous Quadruped/v3_3.jpeg" alt="" height="300"/>
+							<video height="300" controls><source src="/images/projects/Autonomous Quadruped/v3_4.mp4" type="video/mp4"></video>
+							</center>
+							<hr>
+							<h4>Quadru</h4>
+							<p> Skip to current time, a few more 7-8 generations into further prototyping, and frustrated with the actuation transmission mechanism failing, finally decided to directly attatch the servo to lower leg directly, so that no isses would occur, although increasing the leg's moment of inertia, make movements slower overall. <br>
+								Incorporated a pretty nice servo horn snug fit cavity in the body for almost perfect torque transmission with zero to no backlash.</br>
+								Further, owing to issues faced earlier due to limited range of motion, and just for convinience, a lot of time was put into designing the leg such that every joint is doubly supported from either side, and also that each leg and fold into itself completely, making the bot slightly easier to store, and safer, since the servos get damaged on any extreme forced movement outside there 180 degrees range. </p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/v4_leg.jpeg" alt="" height="300"/>
+                            <img src="/images/projects/Autonomous Quadruped/v4_legFolded.jpeg" alt="" height="300"/>
+                            <img src="/images/projects/Autonomous Quadruped/v4_half.jpeg" alt="" height="300"/>
+							</center>
+
+							<p> Here was the first assmebled model, and I was really pround of how mechanically stable this was, compared to all of the previous versions. </br>
+								It was assembled like traditional quadrupeds, with all backward pointing legs. However, from the video below, you can clearly see that this shifts the overall COM of the bot towards the rear, especially since we had those bulky servos attacthed at the extrems of the leg. This resulted in the bot not rising uniformly, but as can be seen, with a forward jerk, and always tried to tip backwards. Further, the weight was unevenly distributed acorss the front and back legs, which implied lifting the rear legs immediately tilted the bot.
+								And although this could have been fixed via a sutiable control algorithm which compensated for the 'jerk' appropriately by sending appropraitely time-phased inputs, or even tilting the body to maintain the COM in the center, there was still lot to be check for not going haywire on the elctrical side, and eliminating as many issue as possible was the best option to narrow down on the roots of such problems. Also, even if I somehow made it work, it still wouldn't be healthy in the long run, with the rear servos always taking a chunk of the load, while the front not so much. </p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/v4_1.jpeg" alt="" height="300"/>
+                            <img src="/images/projects/Autonomous Quadruped/v4_2.jpeg" alt="" height="300"/>
+                            <video height="300" controls><source src="/images/projects/Autonomous Quadruped/v4_3.mp4" type="video/mp4"></video>
+							</center>
+
+							<p> Hence, I decided it might be best to just reverse out the front legs, to make them both forward pointing, which solved many of the balancing issues. </p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/v4_4.jpeg" alt="" height="300"/>
+							</center>
+
+							<p> Below are just a few images giving a glimpse on the electrial side of things. </br>
+								The first image shows how the main circuitry was mounted on the bot via a plank to keep everything organized. This plank rested on the battery and the buck converted, which in turn rested on the body the the quaruped. Everything here was held together via double-sided tape, and tbh, was very helpfull since it can be removed or put together anytime. </p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/v4_circuit.jpeg" alt="" height="300"/>
+							</center>
+
+							<p> There was an issue, every now and then a few servos would just out of nowehere randomly move and lockup, while other did not. And the more confusing part was on testing the servo individually, it worked perfectly. </br>
+								I thought the PCA9685 board wasn't able to sustain the current to every servo, and hence below was my wiring hell attempt to manually connect power each servo independetly.
+								After about 2 weeks of intensive confused testing, found out the cultprit was the fact that I had used a jumper connecting the buck converted to the PCA9685 source. And this limited the current flow from the converter to the servos when a few servos drew power under load. Till now, I felt wire gauges didn't really matter in low volatge applications such as this, but ig I learn't the lesson the hard way ... </p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/v4_wiring.jpeg" alt="" height="300"/>
+							<img src="/images/projects/Autonomous Quadruped/v4_wiring2.jpeg" alt="" height="300"/>
+							</center>
+
+							<p> Here is just another image, showing the ruins and scraps of just a few of the latest protypes before the current one. </p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/v4_scrap.jpeg" alt="" height="300"/>
+
+							</center>
+
+                            
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
