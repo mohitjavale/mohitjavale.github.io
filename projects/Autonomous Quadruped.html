@@ -105,8 +105,42 @@
 							<p> Here is just another image, showing the ruins and scraps of just a few of the latest protypes before the current one. </p>
 							<center>
                             <img src="/images/projects/Autonomous Quadruped/v4_scrap.jpeg" alt="" height="300"/>
-
 							</center>
+
+							<p> Later on right now, it has just been a lot of code testing. </br>
+								Writing control algorithms on the Arduino for control functions such as base command framework, interpolated movements for synced motion etc, forward kinematics, inverse kinematics, etc. </br>								
+							 </p>
+							<center>
+                            <img src="/images/projects/Autonomous Quadruped/fk.jpeg" alt="" height="300"/>
+							</center>
+
+							<p> After a lot of caliberation code fixes to adjust for the slight inaccuracies of the cheap servos, I was succesfully able to maintain a juggle motion, which is basically where diagonal pairs of legs alternatively move in a up-down motion in quick sucesssion, and the quadruped in theory 'balances' on 2 points of contacts. In this state, the bot can be pushed and pulled slightly without falling over due to such motion of the legs. <br>
+								The caliberation was required to again obtain symmetry acorss all the legs, so that the quadruped does not drift on it's own and juggles in place. <br>
+								This was a huge sign of releif, for it was at least a proof of concept, that the servos were powerfull enough to at least handle the dynamic forces of the quadruped upto a certain extent, and also were fast enough to sort of lift the qaudruped through impluses via pushing off the ground in a short preiod of time.  								
+							 </p>
+							<center>
+								<video height="300" controls><source src="/images/projects/Autonomous Quadruped/v4_juggle1.mp4" type="video/mp4"></video>
+								<video height="300" controls><source src="/images/projects/Autonomous Quadruped/v4_juggle2.mp4" type="video/mp4"></video>
+								<video height="300" controls><source src="/images/projects/Autonomous Quadruped/v4_juggle3.mp4" type="video/mp4"></video>
+							</center>
+
+							<p> My latest works have been in making a reasonable .urdf file for the model, so that it can be used in simualtions for further testing of algorithms, and also for training of a gait using RL.
+								I want to ensure this digital twin simulation is as close to real life as possible, such as the inertias, controller frequency and methods/gains, etc, as then stuff trained in the sim could be deployed irl with minor setbacks.   <br>
+								I had considered PyBullet, Mujoco, Gazebo and Isaac Gym for plausible simualtors to be used. <br>
+								I got PyBullet and Gazebo working through the Fusion2urdf and Fusion2bullet extensions although with some modifications since these were outdated. However, Gazebo is kinda slow/unstable to load, and resetting the simulation is another hassle in itself, hence, currently sticking to PyBullet for my tests. <br>
+								I also checked out Mujoco, since a paper suggested it is one of the better solvers among the above in terms of accuracy and speed, howerver, I would have to create another .mjcf file from scracth for this, and also am not a fan of the complex API, and hence this is for some other stage. <br>
+								Issac Gym also seemed as a cool alternative seeing it as one of the lastest developements, and a good investment seeing demonstartions of ETH Zurich's team and how insanely it can speed up policy training. Sadly, the min requirements for this sim is an RTX 2060, and I have a GTX 1650Ti, which alsthough my best efforts, I couldn't get to work since the sim is based on haing those Ray-Tracing Tensor cores, which my GPU lacks :(. <br>
+							 </p>
+
+							 <p> Anyhow, till now, I was sucessfully able to set up my sim in PyBullet, mirror my current control framework in there, and tested out a static 4-point walking gait to experiment out with the sim a bit, and it seemed to be working fine. <br>
+								However, as you can see, the irl implementation was looking good for some time there, but a bad servo gave up just after a few steps, and wasn't able to test any further...
+							 </p>
+							<center>
+								<img src="/images/projects/Autonomous Quadruped/v4_bullet.jpg" alt="" height="300"/>
+								<video height="300" width="500" controls><source src="/images/projects/Autonomous Quadruped/v4_walkSim.mp4" type="video/mp4"></video>
+								<video height="300" width="500" controls><source src="/images/projects/Autonomous Quadruped/v4_walk.mp4" type="video/mp4"></video>
+							</center>
+
 
                             
 
